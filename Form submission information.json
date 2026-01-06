@@ -1,0 +1,160 @@
+{
+  "name": "Form submission information",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "form",
+        "formDescription": "here fill your information",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Name ",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Age",
+              "fieldType": "number",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email",
+              "fieldType": "email",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Qualification",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        128,
+        32
+      ],
+      "id": "4f733e54-f958-44ae-bab9-9cce7e4e6185",
+      "name": "On form submission",
+      "webhookId": "a055dbdd-d057-47f8-8de2-a69af821d1d3"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1gQdGhbOQG28hWYv-nU3rWNu6ILXoUenV351MJ60KVZ4",
+          "mode": "list",
+          "cachedResultName": "student subbmition form ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gQdGhbOQG28hWYv-nU3rWNu6ILXoUenV351MJ60KVZ4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "शीट1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gQdGhbOQG28hWYv-nU3rWNu6ILXoUenV351MJ60KVZ4/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Name": "={{ $('On form submission').item.json[\"Name \"] }}",
+            "Age": "={{ $('On form submission').item.json.Age }}",
+            "Email": "={{ $('On form submission').item.json.Email }}",
+            "Qualification": "={{ $('On form submission').item.json.Qualification }}"
+          },
+          "matchingColumns": [
+            "Name"
+          ],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Age",
+              "displayName": "Age",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Qualification",
+              "displayName": "Qualification",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        416,
+        32
+      ],
+      "id": "35425a26-56f8-4ea6-8b69-4d08745de8d8",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "bvkZJOEf3WzWN4o3",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0d350972-32e0-41ab-be83-816077d55483",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "95de82f4d04283fff491f9a52799435e8ae424d6501c7992c544d25cccd1fcd6"
+  },
+  "id": "1OXpMBfVSeF9OHjL",
+  "tags": []
+}
