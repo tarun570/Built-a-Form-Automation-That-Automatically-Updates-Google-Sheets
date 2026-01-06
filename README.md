@@ -2,8 +2,8 @@
 
 I created a simple but powerful automation where form submissions are directly appended or updated in Google Sheets — no manual data entry required.
 
-📝 Workflow:
-On Form Submission → 📊 Append / Update Row in Google Sheets
+# 📝 Workflow:
+# On Form Submission → 📊 Append / Update Row in Google Sheets
 
 🔧 What this automation does:
 
